@@ -1,0 +1,11 @@
+{
+  "name": "nucleus-angular-auto-focus",
+  "version": "0.2.0",
+  "dependencies": {},
+  "devDependencies": {
+    "jquery": "1.9.1",
+    "angular": "1.0.6",
+    "angular-mocks": "1.0.6",
+    "unstable-angular-complete": "1.1.4"
+  }
+}
