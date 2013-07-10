@@ -14,6 +14,7 @@ angular.module('nag.autoFocus', [])
           });
         }
       ],
+      priority: 0,
       compile: function(element, attributes, transclude) {
         return {
           post: function(scope, element, attributes) {
