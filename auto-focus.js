@@ -14,9 +14,20 @@ angular.module('nag.autoFocus', [])
       controller: [
         '$scope',
         function($scope) {
+          /**
+           * Unregisters the auto focus event
+           *
+           * @ngscope
+           * @property unregisterAutoFocusEvent
+           * @type function
+           */
+          $scope.unregisterAutoFocusEvent = null;
+
           $scope.$on('$destroy', function() {
             //if the scope is destroyed, we no longer need this broadcast to be registered
-            $scope.unregisterBroadcastCallback();
+            if($scope.unregisterAutoFocusEvent) {
+              $scope.$scope.unregisterAutoFocusEvent();
+            }
           });
         }
       ],
@@ -26,15 +37,13 @@ angular.module('nag.autoFocus', [])
           post: function(scope, element, attributes) {
             $timeout(function(){$(element).focus()}, 0);
 
-            //allows you to trigger the auto focus through javascript code without having to reply of DOM selection (like inside a controller)
             /**
-             * Unregisters the callback tied to the trigger-auto-focus event
+             * Will auto focus the last element that has the nagAutoFocus directive on it
              *
-             * @ngscope
-             * @method unregisterBroadcastCallback
-             * @type function
+             * @respondto NagAutoFocus/trigger
+             * @eventlevel root
              */
-            scope.unregisterBroadcastCallback = scope.$on('trigger-auto-focus', function() {
+            scope.unregisterAutoFocusEvent = $rootScope.$on('NagAutoFocus/trigger', function() {
                 $(element).focus()
             });
           }
