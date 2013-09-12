@@ -26,7 +26,7 @@ angular.module('nag.autoFocus', [])
           $scope.$on('$destroy', function() {
             //if the scope is destroyed, we no longer need this broadcast to be registered
             if($scope.unregisterAutoFocusEvent) {
-              $scope.$scope.unregisterAutoFocusEvent();
+              $scope.unregisterAutoFocusEvent();
             }
           });
         }
