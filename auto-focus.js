@@ -1,8 +1,14 @@
 /**
- * Auto focuses element
+ * Auto focuses element.
+ *
+ * ```html
+ * <input type="text" ng-bind="username" nag-auto-focus />
+ * ```
  *
  * @module nag.autoFocus
  * @ngdirective nagAutoFocus
+ *
+ * @nghtmlattribute {null} nag-auto-focus
  */
 angular.module('nag.autoFocus', [])
 .directive('nagAutoFocus', [
@@ -23,6 +29,12 @@ angular.module('nag.autoFocus', [])
            */
           $scope.unregisterAutoFocusEvent = null;
 
+          /**
+           * Clean up on destruction of this $scope
+           *
+           * @respondto $destroy
+           * @eventlevel scope
+           */
           $scope.$on('$destroy', function() {
             //if the scope is destroyed, we no longer need this broadcast to be registered
             if($scope.unregisterAutoFocusEvent) {
@@ -34,8 +46,10 @@ angular.module('nag.autoFocus', [])
       priority: 0,
       compile: function(element, attributes, transclude) {
         return {
-          post: function(scope, element, attributes) {
-            $timeout(function(){$(element).focus()}, 0);
+          post: function($scope, element, attributes) {
+            $timeout(function(){
+              element.focus()
+            }, 0);
 
             /**
              * Will auto focus the last element that has the nagAutoFocus directive on it
@@ -43,7 +57,7 @@ angular.module('nag.autoFocus', [])
              * @respondto NagAutoFocus/trigger
              * @eventlevel root
              */
-            scope.unregisterAutoFocusEvent = $rootScope.$on('NagAutoFocus/trigger', function() {
+            $scope.unregisterAutoFocusEvent = $rootScope.$on('NagAutoFocus/trigger', function() {
                 $(element).focus()
             });
           }
