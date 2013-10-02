@@ -1,5 +1,7 @@
 /**
- * Auto focuses element.
+ * # Auto Focus
+ *
+ * The auto focus directive allows you to be able to specific an input element that should be auto focused.
  *
  * ```html
  * <input type="text" ng-bind="username" nag-auto-focus />
