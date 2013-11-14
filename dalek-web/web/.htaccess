@@ -1,0 +1,15 @@
+#development
+DirectoryIndex index-dev.html
+
+#production
+#DirectoryIndex index.html
+
+RewriteEngine On
+
+# main application rewrite
+RewriteCond %{DOUCMENT_ROOT}%{REQUEST_FILENAME} !-f
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_FILENAME} !-d
+#development
+RewriteRule ^/?[a-zA-Z0-9\-\_/]+?$ /index-dev.html [L,QSA]
+#production
+#RewriteRule ^/?[a-zA-Z0-9\-\_/]+?$ /index.html [L,QSA]

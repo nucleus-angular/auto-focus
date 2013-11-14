@@ -1,4 +1,6 @@
 .idea
-components
 coverage
 docs
+node_modules
+.sass-cache
+.DS_Store
