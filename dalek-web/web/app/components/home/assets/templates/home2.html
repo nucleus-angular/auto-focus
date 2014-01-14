@@ -1,5 +1,5 @@
 <div class="home-page">
   <div ng-class="{'is-focused': isFocused, 'not-focused': !isFocused}"></div>
-  <input nag-auto-focus="true" ng-focus="focus($event)" ng-blur="blur($event)" data-ut="default" />
+  <input nag-auto-focus nag-focus="focus($event)" nag-blur="blur($event)" data-ut="default" />
   <button ng-click="focusInput()" data-ut="focus-input">focus input</button>
 </div>

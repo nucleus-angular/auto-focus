@@ -13,6 +13,15 @@ angular.module('app.home.home', [
           controller: 'HomeCtrl'
         }
       }
+    })
+    .state('app.home.home2', {
+      url: '/2',
+      views: {
+        '': {
+          templateUrl: '/app/components/home/assets/templates/home2.html',
+          controller: 'HomeCtrl'
+        }
+      }
     });
   }
 ])
@@ -30,6 +39,6 @@ angular.module('app.home.home', [
   };
 
   $scope.focusInput = function() {
-    $('input').focus();//$rootScope.$broadcast('NagAutoFocus/trigger');
+    $rootScope.$broadcast('NagAutoFocus/trigger');
   };
 }]);

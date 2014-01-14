@@ -1,7 +1,8 @@
 angular.module('app', [
   'app.core',
   'app.home',
-  'nag.autoFocus'
+  'nag.autoFocus',
+  'nag.dynamicEvent'
 ])
 .config([
   '$locationProvider',

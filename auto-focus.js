@@ -10,7 +10,7 @@
  * @module nag.autoFocus
  * @ngdirective nagAutoFocus
  *
- * @nghtmlattribute {null} nag-auto-focus
+ * @nghtmlattribute {string} nag-auto-focus Pass the string true to auto trigger the focus event when directive is rendered
  */
 angular.module('nag.autoFocus', [])
 .directive('nagAutoFocus', [
@@ -49,9 +49,11 @@ angular.module('nag.autoFocus', [])
       compile: function(element, attributes, transclude) {
         return {
           post: function($scope, element, attributes) {
-            $timeout(function(){
-              element.focus()
-            }, 0);
+            if(attributes.nagAutoFocus === 'true') {
+              $timeout(function(){
+                element.focus()
+              }, 0);
+            }
 
             /**
              * Will auto focus the last element that has the nagAutoFocus directive on it
@@ -60,7 +62,7 @@ angular.module('nag.autoFocus', [])
              * @eventlevel root
              */
             $scope.unregisterAutoFocusEvent = $rootScope.$on('NagAutoFocus/trigger', function() {
-                $(element).focus()
+              $(element).focus()
             });
           }
         };
