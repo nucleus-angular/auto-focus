@@ -3,12 +3,12 @@
   "version": "0.2.6",
   "dependencies": {},
   "devDependencies": {
-    "jquery": "1.10.x",
-    "lodash": "1.2.1",
-    "moment": "2.0.0",
+    "jquery": "2.x.x",
+    "lodash": "2.x.x",
+    "moment": "2.x.x",
     "modernizr": "2.6.2",
-    "angular": "1.2.0",
-    "angular-animate": "1.2.0",
+    "angular": "1.2.x",
+    "angular-animate": "1.2.x",
     "angular-ui-router": "0.2.0",
     "nucleus-angular-dynamic-event": "master",
     "nucleus-angular-sass-framework": "master"

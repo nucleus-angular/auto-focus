@@ -1,0 +1,8 @@
+{
+  "tests": [
+    "dalek/auto-focus.js"
+  ],
+  "browser": [
+    "chrome"
+  ]
+}
