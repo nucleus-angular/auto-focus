@@ -12,7 +12,7 @@
  *
  * @nghtmlattribute {string} nag-auto-focus Pass the string true to auto trigger the focus event when directive is rendered
  */
-angular.module('nag.autoFocus', [])
+angular.module('nag.autoFocus')
 .directive('nagAutoFocus', [
   '$timeout',
   '$rootScope',
