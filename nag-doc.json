@@ -6,11 +6,17 @@
     "outdir": "./docs",
     "jsonDir": "json",
     "webDir": "web",
+    "docApp": {
+      "url": "https://github.com/nucleus-angular/nag-doc-app/archive/master.zip",
+      "zipPath": "/nag-doc-app-master"
+    },
     "paths": [
       "."
     ],
     "ignorePaths": [
-      "docs"
+      "docs",
+      "dalek",
+      "dalek-web"
     ]
   }
 }
