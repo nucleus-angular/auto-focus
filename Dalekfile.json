@@ -2,6 +2,7 @@
   "tests": [
     "dalek/auto-focus.js"
   ],
+  "logLevel": "1",
   "browser": [
     "chrome"
   ]
