@@ -1,6 +1,6 @@
 {
   "name": "nucleus-angular-auto-focus",
-  "version": "0.2.6",
+  "version": "0.5.0",
   "dependencies": {},
   "devDependencies": {
     "jquery": "2.x.x",
@@ -10,7 +10,7 @@
     "angular": "1.2.x",
     "angular-animate": "1.2.x",
     "angular-ui-router": "0.2.0",
-    "nucleus-angular-dynamic-event": "master",
-    "nucleus-angular-sass-framework": "master"
+    "nucleus-angular-dynamic-event": "0.5.0",
+    "nucleus-angular-sass-framework": "0.5.0"
   }
 }
